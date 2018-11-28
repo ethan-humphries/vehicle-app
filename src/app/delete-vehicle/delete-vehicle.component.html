@@ -1,0 +1,22 @@
+<div class = "card card-body mb-3">
+  <form>
+    <h4>Remove a Vehicle</h4>
+    <div class = "form-inline">
+        <label for="registration"class = "col-sm-2 col-form-label">Registration:</label>
+        <input  type = "text" [(ngModel)]="vehicle.registration" class="form-control" required
+        name = "registration" #registration="ngModel"  placeholder = "Registration number..." >
+        <button id = "button" name="button" class = "btn btn-outline-primary m-5" (click)="findVehicle(vehicle.registration)">Find Vehicle</button>
+    </div>
+    <div *ngIf="vehicleFound">
+      <label class = "alert alert-success">Vehicle Found: {{this.vehicle.registration}} {{this.vehicle.make}} {{this.vehicle.model}} {{this.vehicle.bodyShape}} {{this.vehicle.transmission}} </label>
+      <button  *ngIf="!removed" class = "btn btn-outline-danger m-3" (click) = removeVehicle()>Remove Vehicle?</button>
+    </div>
+    <div *ngIf="vehicleFound && removed">
+      <label class = "alert alert-success">Vehicle {{this.vehicle.registration}} has been removed!</label>
+    </div>
+    <div *ngIf="!vehicleFound && submitted">
+      <label class = "btn btn-block btn-outline-danger">{{errorMessage}}</label>
+    </div>
+  </form>
+</div>
+
