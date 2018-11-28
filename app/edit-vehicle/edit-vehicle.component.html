@@ -1,0 +1,15 @@
+<div class = "card card-body mb-3">
+  <form>
+    <h4>Edit Vehicle(s)</h4>
+    <div class = "form-inline">
+        <label for="registration"class = "col-sm-2 col-form-label">Choose a Vehicle</label>
+        <select class="form-control form-control-lg" [(ngModel)]="vehicle.registration" name="registration" #name="ngModel">
+          <option value = {{vehicle.registration}} *ngFor=" let vehicle of vehicles" >{{vehicle.registration}}</option>
+        </select>
+    </div>
+    <br>
+    <div>
+      {{this.vehicle.registration}}
+    </div>
+  </form>
+</div>

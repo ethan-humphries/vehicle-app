@@ -1,0 +1,32 @@
+<!-- <button routerLink="new-vehicle" class = "btn btn-success btn-lg active">Add New Vehicle</button>
+<button routerLink="" class = "btn btn-success btn-lg active">Edit Vehicle(s)</button>
+<button routerLink="" class = "btn btn-success btn-lg active"> Delete Vehicle(s)</button>
+<button routerLink="view-vehicles" class = "btn btn-success btn-lg active">Show All Vehicles</button>
+<router-outlet></router-outlet> -->
+<div class = "container">
+<ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+      <a class="nav-link " routerLink="new-vehicle" (click)="removeWelcomeScreen()" routerLinkActive="nav-link active">New Vehicle</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="edit-vehicle" (click)="removeWelcomeScreen()" routerLinkActive="nav-link active">Edit Vehicles</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="delete-vehicle" (click)="removeWelcomeScreen()" routerLinkActive="nav-link active">Delete Vehicles</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="view-vehicles" (click)="removeWelcomeScreen()" routerLinkActive="nav-link active">My Vehicles</a>
+    </li>
+  </ul>
+</div>
+<br>
+<div *ngIf="welcomeScreen" class = "container">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to your vehicle management app!</h1>
+      <p class="lead">This is a simple app to help you manage vehicles, keep up to date and view your vehicles in an easy organised way.</p>
+      <hr class="my-4">
+      <p>To begin, choose from one of the four options at the top of the screen!</p>
+    </div>
+</div>
+  <router-outlet *ngIf="!welcomeScreen"></router-outlet>
+<br><br>
